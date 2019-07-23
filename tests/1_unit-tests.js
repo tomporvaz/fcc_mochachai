@@ -57,7 +57,7 @@ suite('Unit Tests', function(){
     /** 6 - .strictEqual(), .notStrictEqual() **/
     // .strictEqual() compares objects using '==='
     test('#strictEqual, #notStrictEqual', function(){
-      assert.strictEqual( 6, '6' );
+      assert.notStrictEqual( 6, '6' );
       assert.strictEqual( 6, 3*2 );
       assert.strictEqual( 6 * '2', 12 );
       assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] );
@@ -65,8 +65,8 @@ suite('Unit Tests', function(){
     /** 7 - .deepEqual(), .notDeepEqual() **/
     // .deepEqual() asserts that two object are deep equal
     test('#deepEqual, #notDeepEqual', function(){
-      assert.fail( { a: '1', b: 5 } , { b: 5, a: '1' }, "keys order doesn't matter" );
-      assert.fail( { a: [5, 6] }, { a: [6, 5] }, "array elements position does matter !!" );
+      assert.deepEqual( { a: '1', b: 5 } , { b: 5, a: '1' }, "keys order doesn't matter" );
+      assert.deepEqual( { a: [5, 6] }, { a: [6, 5] }, "array elements position does matter !!" );
     });
   });
 
