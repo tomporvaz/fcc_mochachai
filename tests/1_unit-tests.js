@@ -66,7 +66,7 @@ suite('Unit Tests', function(){
     // .deepEqual() asserts that two object are deep equal
     test('#deepEqual, #notDeepEqual', function(){
       assert.deepEqual( { a: '1', b: 5 } , { b: 5, a: '1' }, "keys order doesn't matter" );
-      assert.deepEqual( { a: [5, 6] }, { a: [6, 5] }, "array elements position does matter !!" );
+      assert.notDeepEqual( { a: [5, 6] }, { a: [6, 5] }, "array elements position does matter !!" );
     });
   });
 
@@ -90,10 +90,10 @@ suite('Unit Tests', function(){
 
     /** 9 - .isBelow() => a < b , .isAtLeast =>  a >= b **/
     test('#isBelow, #isAtLeast', function() {
-      assert.fail('world'.length , 5);
-      assert.fail(2*Math.random(), 0);
-      assert.fail(5 % 2, 2);
-      assert.fail(2/3, 1);
+      assert.isAtLeast('world'.length , 5);
+      assert.isAtLeast(2*Math.random(), 0);
+      assert.isBelow(5 % 2, 2);
+      assert.isBelow(2/3, 1);
     });
 
     /** 10 - .approximately **/
