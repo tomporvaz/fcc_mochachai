@@ -268,7 +268,7 @@ suite('Functional Tests', function() {
           browser.assert.success();
           browser.assert.text('span#name', 'Amerigo');
           browser.assert.text('span#surname', 'Vespucci');
-          browser.assert.element('span#date', 1);
+          browser.assert.element('span#dates', 1);
           done();
         })
 
